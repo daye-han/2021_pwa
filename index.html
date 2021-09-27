@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<style>
+	.blue_style {color:blue;}
+</style>
+<body>
+	<div id="main">
+		<!-- 머스태시: html 엘리먼트 값
+			v-bind: html 어트리뷰트 바인딩
+			v-model: 양방향 데이터 바인딩 -->
+		<p v-bind:class="sColorName + '_style'">{{ sTitle }}</p>
+		<input :value="sDate">
+		<input v-model:value="sTitle">
+	</div>
+	<script>
+		new Vue({
+			el: '#main',
+			data: {
+				sTitle: '안녕하세요!',
+				sColorName: 'blue',
+				sDate: '올해 연도: ' + new Date().getFullYear(),
+			}
+		});
+	</script>
+</body>
+</html>
